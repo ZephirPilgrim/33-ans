@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>33 ans !!!</title>
+  <style>
+    /* Styles de base pour centrer le texte */
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background-color: black;
+      overflow: hidden;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+
+    h1 {
+      font-size: 5em;
+      font-weight: bold;
+      position: relative;
+      color: #ffeb3b;
+      text-shadow: 0 0 10px rgba(255, 235, 59, 0.7),
+                   0 0 20px rgba(255, 140, 0, 0.5),
+                   0 0 30px rgba(255, 69, 0, 0.5);
+      animation: flicker 1s infinite alternate;
+    }
+
+    /* Animation des flammes autour du texte */
+    .flames {
+      position: absolute;
+      top: -10px;
+      left: -10px;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .flame {
+      position: absolute;
+      bottom: 0;
+      width: 10px;
+      height: 40px;
+      background-color: orange;
+      opacity: 0.8;
+      transform-origin: bottom;
+      animation: flame-animation 0.5s infinite ease-in-out;
+    }
+
+    /* Définition des animations */
+    @keyframes flicker {
+      0%, 100% {
+        opacity: 0.9;
+        text-shadow: 0 0 10px rgba(255, 235, 59, 0.7),
+                     0 0 20px rgba(255, 140, 0, 0.5),
+                     0 0 30px rgba(255, 69, 0, 0.5);
+      }
+      50% {
+        opacity: 1;
+        text-shadow: 0 0 15px rgba(255, 235, 59, 0.9),
+                     0 0 25px rgba(255, 140, 0, 0.7),
+                     0 0 35px rgba(255, 69, 0, 0.7);
+      }
+    }
+
+    @keyframes flame-animation {
+      0%, 100% {
+        transform: scaleY(0.8) translateY(0px);
+        opacity: 0.6;
+      }
+      50% {
+        transform: scaleY(1.2) translateY(-10px);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>33 ans !!!</h1>
+  <div class="flames">
+    <!-- Génération de plusieurs flammes -->
+    <div class="flame" style="left: 10%; animation-delay: 0s;"></div>
+    <div class="flame" style="left: 30%; animation-delay: 0.1s;"></div>
+    <div class="flame" style="left: 50%; animation-delay: 0.2s;"></div>
+    <div class="flame" style="left: 70%; animation-delay: 0.3s;"></div>
+    <div class="flame" style="left: 90%; animation-delay: 0.4s;"></div>
+  </div>
+</body>
+</html>
